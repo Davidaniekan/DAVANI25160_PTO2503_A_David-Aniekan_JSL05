@@ -303,3 +303,31 @@ main {
 .close-btn:hover {
   transform: scale(1.15);
 }
+
+/* ========================
+   Create Task Modal 
+======================== */
+.create-task-btn {
+  background-color: #635fc7;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  height: 40px;
+  text-align: center;
+  line-height: 23px;
+}
+
+.create-task-btn:hover {
+  background-color: #514ea7;
+}
+
+.create-task-btn:active,
+.new-task-btn:active,
+.plus-btn:active,
+.board-btn:active {
+  background-color: #161356;
+}
