@@ -147,3 +147,42 @@ function handleCloseClick(buttonType) {
   }
   closeModal();
 }
+
+// =========================
+// New Task Creation
+// =========================
+/**
+ * Creates a new task from modal input fields, validates, saves, and renders it.
+ */
+function createTask() {
+  const updatedTasks = loadTasks();
+
+  // Validate status first
+  const status = newTaskStatusSelect.value;
+  if (!status) {
+    alert("Please select a valid status for the task.");
+    return; // stop creating the task
+  }
+
+  const newTask = {
+    id: nextTaskId++, // increment for each new task
+    title: newTaskTitleInput.value.trim(),
+    description: newTaskDescriptionInput.value.trim(),
+    status: status, // use validated status
+  };
+  if (!newTask.title) {
+    alert("! Please fill out this field.");
+    return;
+  }
+
+  updatedTasks.push(newTask);
+  saveTasks(updatedTasks);
+  renderTasks(updatedTasks);
+
+  // Reset form fields
+  newTaskTitleInput.value = "";
+  newTaskDescriptionInput.value = "";
+  newTaskStatusSelect.value = "";
+
+  closeModal();
+}
