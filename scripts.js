@@ -111,3 +111,39 @@ function updateColumnCounts(tasks) {
     "#done h4"
   ).innerHTML = `<span class="dot green"></span> DONE (${doneCount})`;
 }
+
+/**
+ * Opens modal with provided task data pre-filled.
+ * @param {Task} task - Task object to display in modal.
+ */
+function openModal(task) {
+  taskTitleInput.value = task.title;
+  taskDescriptionInput.value = task.description;
+  taskStatusSelect.value = task.status;
+
+  // Make sure faded styles are applied immediately
+  updateDropdownHighlight(taskStatusSelect);
+
+  // show modal
+  modalBackdrop.style.display = "flex";
+}
+
+/**
+ * Closes the modal by hiding the backdrop and the new task modal.
+ */
+function closeModal() {
+  [modalBackdrop, modalNewTask].forEach((el) => (el.style.display = "none"));
+}
+
+/**
+ * Handles logic for close buttons.
+ * Prompts confirmation if closing a new task modal.
+ * @param {"newTask" | "oldTask"} buttonType - The type of close button clicked.
+ */
+function handleCloseClick(buttonType) {
+  if (buttonType === "newTask") {
+    const confirmCancel = confirm("Are you sure you want to cancel?");
+    if (!confirmCancel) return; // stop if user cancels
+  }
+  closeModal();
+}
