@@ -58,3 +58,56 @@ function loadTasks() {
 
   return tasks;
 }
+
+// =========================
+// Task Rendering
+// =========================
+/**
+ * Render all tasks into their respective columns.
+ * @param {Task[]} tasks - Array of task objects to render
+ */
+function renderTasks(tasks) {
+  // Clear all task containers
+  document.querySelectorAll(".tasks-container").forEach((container) => {
+    container.innerHTML = "";
+  });
+
+  tasks.forEach((task) => {
+    // Create task card
+    const taskElement = document.createElement("div");
+    taskElement.classList.add("taskCard");
+    taskElement.dataset.id = task.id;
+    taskElement.textContent = task.title; // Only show title
+
+    // Append to correct column by status
+    const column = document.querySelector(`#${task.status} .tasks-container`);
+    if (column) {
+      column.appendChild(taskElement);
+    }
+
+    // When clicked → open modal with task details
+    taskElement.addEventListener("click", () => openModal(task));
+  });
+
+  updateColumnCounts(tasks);
+}
+
+/**
+ * Update column headers with task counts.
+ * @param {Task[]} tasks - Array of tasks to count for each status.
+ */
+function updateColumnCounts(tasks) {
+  const todoCount = tasks.filter((t) => t.status === "todo").length;
+  const doingCount = tasks.filter((t) => t.status === "doing").length;
+  const doneCount = tasks.filter((t) => t.status === "done").length;
+
+  document.querySelector(
+    "#todo h4"
+  ).innerHTML = `<span class="dot indigo"></span> TODO (${todoCount})`;
+  document.querySelector(
+    "#doing h4"
+  ).innerHTML = `<span class="dot purple"></span> DOING (${doingCount})`;
+  document.querySelector(
+    "#done h4"
+  ).innerHTML = `<span class="dot green"></span> DONE (${doneCount})`;
+}
