@@ -80,6 +80,37 @@
             </div>
           </main>
 
+          <!-- Modal for viewing/editing tasks -->
+          <div class="modal-backdrop" id="modal-backdrop">
+            <form class="modal">
+              <!-- Close button -->
+              <button type="button" class="close-btn" id="close-modal">
+                &times;
+              </button>
+              <h3>Task</h3>
+
+              <!-- Task title input -->
+              <label for="task-title">Title</label>
+              <input type="text" id="task-title" name="title" required />
+
+              <!-- Task description textarea -->
+              <label for="task-description">Description</label>
+              <textarea
+                id="task-description"
+                name="description"
+                rows="5"
+              ></textarea>
+
+              <!-- Task status dropdown -->
+              <label for="task-status">Status</label>
+              <select id="task-status" name="status" required>
+                <option value="todo">todo</option>
+                <option value="doing">doing</option>
+                <option value="done">done</option>
+              </select>
+            </form>
+          </div>
+
         </div>
       </div>
     </div>
