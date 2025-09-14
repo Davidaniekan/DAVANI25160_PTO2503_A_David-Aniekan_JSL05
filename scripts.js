@@ -242,3 +242,17 @@ taskStatusSelect.addEventListener("change", () =>
 newTaskStatusSelect.addEventListener("change", () =>
   updateDropdownHighlight(newTaskStatusSelect)
 );
+
+// =========================
+// Initialization
+// =========================
+/**
+ * Initializes the task board by loading tasks and rendering them.
+ */
+function initTaskBoard() {
+  tasks = loadTasks();
+  renderTasks(tasks);
+}
+
+// Wait until DOM is fully loaded
+document.addEventListener("DOMContentLoaded", initTaskBoard);
