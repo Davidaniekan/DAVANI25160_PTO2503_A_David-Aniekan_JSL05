@@ -33,3 +33,28 @@ const newTaskStatusSelect = document.getElementById("new-task-status");
 // =========================
 let tasks = [];
 let nextTaskId = 9; // Start counting from 9
+
+/**
+ * Saves tasks array to local storage and updates task counter.
+ * @param {Task[]} updatedTasks - Array of tasks to save.
+ */
+function saveTasks(updatedTasks) {
+  tasks = updatedTasks;
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+  localStorage.setItem("nextTaskId", nextTaskId);
+}
+
+/**
+ * Loads tasks from local storage. Falls back to initialTasks if not found.
+ * Updates `nextTaskId` counter if stored in localStorage.
+ * @returns {Task[]} Array of loaded tasks.
+ */
+function loadTasks() {
+  const saved = localStorage.getItem("tasks");
+  tasks = saved ? JSON.parse(saved) : [...initialTasks];
+
+  const savedNextId = localStorage.getItem("nextTaskId");
+  if (savedNextId) nextTaskId = parseInt(savedNextId, 10);
+
+  return tasks;
+}
