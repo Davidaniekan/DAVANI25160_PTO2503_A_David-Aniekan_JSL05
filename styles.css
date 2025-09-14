@@ -140,3 +140,78 @@ header {
   display: flex;
   gap: 0.9375rem;
 }
+
+/* ========================
+  Columns section 
+======================== */
+.columns {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 340px));
+  gap: 1.5625rem;
+  width: 100%;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.column h4 {
+  display: flex;
+  margin-bottom: 0.9375rem;
+  gap: 10px;
+}
+
+.dot {
+  height: 0.9375rem;
+  width: 0.9375rem;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.indigo {
+  background-color: #49c4e5;
+}
+
+.purple {
+  background-color: #8471f2;
+}
+
+.green {
+  background-color: #67e2ae;
+}
+
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.taskCard {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  margin-bottom: 16px;
+  width: 100%;
+  height: 3.75rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px 0px #364e7e1a;
+  padding-left: 0.9375rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  overflow: hidden;
+}
+
+.taskCard:hover {
+  transform: scale(1.02);
+}
