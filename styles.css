@@ -93,3 +93,50 @@ h4 {
 .plus-btn:hover {
   background-color: #a8a4ff;
 }
+
+/* ========================
+   Header and board list 
+======================== */
+header {
+  background-color: #ffffff;
+  color: #000112;
+  padding: 2.125rem 1.25rem 1.25rem 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1.4375rem;
+  border-bottom: 2px solid #e4ebfa;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-task-btn {
+  background-color: #635fc7;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 100%;
+  border: none;
+  cursor: pointer;
+  border-radius: 1.25rem;
+  padding: 10px 12px;
+}
+
+.plus-btn {
+  display: none;
+  background-color: #635fc7;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.board-list {
+  display: flex;
+  gap: 0.9375rem;
+}
