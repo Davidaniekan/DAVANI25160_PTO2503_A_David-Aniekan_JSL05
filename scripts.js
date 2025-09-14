@@ -204,3 +204,41 @@ function updateDropdownHighlight(selectElement) {
     );
   }
 }
+
+// =========================
+// Event Listeners
+// =========================
+// When opening new task modal → reset status select to faded
+newTaskBtn.forEach((btn) =>
+  btn.addEventListener("click", () => {
+    modalNewTask.style.display = "flex";
+    newTaskStatusSelect.value = "";
+    updateDropdownHighlight(newTaskStatusSelect);
+  })
+);
+
+createTaskBtn.addEventListener("click", createTask);
+
+// Asks the user for confirmation before closing.
+newTaskCloseBtn.addEventListener("click", () => handleCloseClick("newTask"));
+
+// Closes the modal immediately without confirmation.
+closeModalBtn.addEventListener("click", () => handleCloseClick("oldTask"));
+
+// Close modal when clicking backdrop (outside modal box)
+modalBackdrop.addEventListener("click", (e) => {
+  if (e.target === modalBackdrop) closeModal();
+});
+
+// =========================
+// Apply dropdown behavior for BOTH selects
+// =========================
+// Existing task status select
+taskStatusSelect.addEventListener("change", () =>
+  updateDropdownHighlight(taskStatusSelect)
+);
+
+// New task status select
+newTaskStatusSelect.addEventListener("change", () =>
+  updateDropdownHighlight(newTaskStatusSelect)
+);
