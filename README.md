@@ -1,44 +1,103 @@
 # JSL05 Project Brief: Task Board with Local Storage Persistence and Task Creation
 
-## Prerequisite
+## 📌 Kanban Task Management  
 
-1. Before starting this challenge, ensure that you have **correctly populated your DOM elements** as per the solution in JSL04. Additionally, ensure that clicking a task should **open the modal with the relevant task details** as required in the previous challenge.
-2. **Check the project user stories in your student dashboard**, make sure you understand what is required for each feature.
+## 📝 Project Description  
+The **Kanban Task Management** application is a lightweight, responsive web-based task board designed to help users organise their workflow efficiently.  
+Users can create, view, and manage tasks across three main columns (**To Do, Doing, Done**) with persistence provided via **Local Storage**, ensuring tasks remain available even after refreshing or closing the browser.  
 
-## Overview
+The project follows a modular approach, ensuring scalability and maintainability. It also integrates a responsive modal system for adding and editing tasks, matching modern UI/UX design principles.  
 
-In this project, you will implement a task management system where **tasks are persisted in local storage**, ensuring that tasks remain available even after refreshing the page or reopening the application. Users will be able to **add new tasks**, with the task details being **stored in local storage** and displayed in the appropriate **columns** ("To Do", "Doing", "Done"). The application should also include an **Add Task** modal for creating new tasks.
+---
 
-## Key Objectives
+## ⚙️ Technologies Used  
+- **HTML5** – semantic structure for accessible layouts  
+- **CSS3** – responsive styling with mobile-first design principles  
+- **JavaScript (ES6+)** – dynamic rendering, task persistence, and interaction logic  
+- **Local Storage API** – saves tasks locally without a backend
 
-### Persistent Task Storage & Retrieval
+---
 
-- **Save tasks to local storage**: On page load, the application should **load tasks** from local storage so that the latest task list is available, even after a refresh.
-- Ensure that **tasks are saved in local storage** every time a new task is added so that tasks persist after the page refreshes.
-- **Load tasks** from local storage on startup, so users can see the latest tasks without manually re-entering them.
-- Tasks should be categorized correctly into their respective columns (e.g., "To Do", "Doing", "Done") based on their **status** when loaded from local storage.
+## ✨ Features  
 
-### Task Creation & Modal Interaction
+### ✅ User Features  
+- **Task Persistence:** Saves tasks to **local storage** so they are available after refresh or reopening the browser.  
+- **Dynamic Rendering:** Tasks are displayed in their respective columns (**To Do, Doing, Done**) automatically.  
+- **Add Task Modal:** Create new tasks via a modal form with fields for title, description, and status selection.  
+- **Form Validation:** Alerts users if a task title or status is missing.  
+- **Responsive Design:** Application works seamlessly on both desktop and mobile devices.  
+- **Dropdown Highlighting:** Selected status is emphasised while others appear faded for clarity.  
 
-- Provide an **"Add Task" button** that, when clicked, opens a **modal** for creating a new task.
-- The modal should include:
-  - Fields for entering the **task title** and **description**.
-  - A dropdown to select the task **status** ("To Do", "Doing", "Done").
-  - A **submit button** to add the new task to the task board immediately.
-- After submitting, the task should appear on the board without requiring a page refresh.
+### 👨‍💻 Developer Features  
+- **Modular Codebase:** Functions are separated by responsibility (rendering, storage, modal handling).  
+- **JSDoc Documentation:** Every function is documented for maintainability.  
+- **Commit History Structure:** Clear commit message structure for version control.  
 
-## Design & Responsiveness
+---
+## 📂 Project Structure  
 
-- The **"Add New Task" modal** should match the [Figma design](https://www.figma.com/design/y7bFCUYL5ZHfPeojACBXg2/Challenges-%7C-JSL?node-id=0-1&p=f&t=NNqgDPlU1PNLLh8i-0), including mobile-responsive behavior.
-- Ensure that the modal and task board are **fully responsive** and function properly on both desktop and mobile devices.
-- The "Add Task" button should **transform** appropriately on mobile devices to match the Figma design.
+```bash
+├── index.html       # HTML structure
+├── styles.css       # CSS styles and responsive design
+├── scripts.js       # JavaScript logic for tasks, modals, and localStorage
+├── assets/          # Logo, icons, and other static assets
+└── README.md        # Project documentation
+```
+---
 
-## Code Structure & Maintainability
+## 🛠️ Setup Instructions  
 
-- **Modularize your JavaScript code**: Break your code into separate modules, each handling a **single responsibility** (e.g., local storage handling, task rendering, modal management).
-- Use **descriptive variable and function names** to ensure the code is clear and easy to maintain.
-- Include **JSDoc comments** for every major function and module to describe their functionality, parameters, and return values.
+### 1. Clone Repository  
+```bash
+git clone https://github.com/Davidaniekan/DAVANI25160_PTO2503_A_David-Aniekan_JSL05.git
+cd kanban-task-management
+```
+### 2. Open Project
 
-## Expected Outcome
+Since it’s a front-end project, no build tools are required.
+Simply open ```index.html``` in your browser:
 
-A fully functional task management system where tasks are dynamically loaded from **local storage**, tasks can be **added through a modal**, and the application **remains consistent** after refreshing the page. The code will be modular, well-documented, and easy to maintain, following best practices for JavaScript development.
+```bash
+open index.html
+```
+or (Windows):
+
+```bash
+start index.html
+```
+---
+## 🚀 Usage Instructions
+### 🖥️ Desktop View
+
+- Click **"+ Add New Task"** to open the modal.
+
+- Fill in the **title, description, and status.**
+
+- Click **"Create Task"** → The task will appear in the correct column.
+
+### 📱 Mobile View
+
+- Use the **"+" floating button** to add a task.
+
+- Modal adapts to smaller screen sizes for smooth interaction.
+
+### 🔄 Task Persistence
+
+- Tasks are saved to **Local Storage** automatically.
+
+- Closing or refreshing the browser will not erase them.
+
+---
+## 📊 Example Workflow
+
+- Add a task **"Finish Resume"** → Select status **To Do**
+
+- Refresh the page → Task remains in **To Do** column
+
+---
+
+## 👤 Author
+
+Developed by **David Aniekan**
+[GitHub](https://github.com/Davidaniekan) | [LinkedIn](https://linkedin.com/in/david-aniekan)
+
